@@ -105,7 +105,7 @@ Useful official references:
 
 Code ProMax interacts with ChatGPT through your own account. There is **no guarantee that using any third-party automation or integration is risk-free for an account**.
 
-The developer's own experience is that Code ProMax has been used for months, on multiple computers, with ChatGPT Plus accounts without those accounts being disabled as a result of that testing. **That is only an anecdotal experience, not a guarantee that the same outcome will apply to every user, account, usage pattern, region, workspace, or future OpenAI policy.**
+The developer's own experience is that Code ProMax has been used for months, on multiple computers, with ChatGPT Plus accounts without those test accounts being disabled during that testing period. **That is only an anecdotal experience, not a guarantee that the same outcome will apply to every user, account, usage pattern, region, workspace, or future OpenAI policy.**
 
 A ChatGPT account can encounter restrictions, verification requests, temporary limitations, suspension, or other problems for many different reasons. Depending on the situation, those reasons may relate to account security, billing, policy enforcement, unusual activity, usage patterns, workspace rules, product changes, or other factors. If an account issue happens while Code ProMax is installed, that timing alone does not prove that Code ProMax caused it.
 

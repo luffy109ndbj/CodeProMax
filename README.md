@@ -105,7 +105,7 @@ Tài liệu chính thức hữu ích:
 
 Code ProMax tương tác với ChatGPT bằng chính tài khoản của bạn. **Không có bảo đảm rằng việc sử dụng bất kỳ automation hoặc integration bên thứ ba nào cũng hoàn toàn không có rủi ro đối với tài khoản.**
 
-Theo trải nghiệm thực tế của developer, Code ProMax đã được sử dụng trong nhiều tháng, trên nhiều máy tính và với các tài khoản ChatGPT Plus mà không ghi nhận việc các tài khoản thử nghiệm đó bị vô hiệu hóa do quá trình sử dụng này. **Đây chỉ là kinh nghiệm thực tế của developer, không phải cam kết rằng mọi người dùng, mọi tài khoản, mọi cách sử dụng, mọi khu vực, mọi workspace hoặc mọi policy trong tương lai của OpenAI đều sẽ có kết quả giống nhau.**
+Theo trải nghiệm thực tế của developer, Code ProMax đã được sử dụng trong nhiều tháng, trên nhiều máy tính và với các tài khoản ChatGPT Plus mà không ghi nhận việc các tài khoản thử nghiệm đó bị vô hiệu hóa trong thời gian thử nghiệm này. **Đây chỉ là kinh nghiệm thực tế của developer, không phải cam kết rằng mọi người dùng, mọi tài khoản, mọi cách sử dụng, mọi khu vực, mọi workspace hoặc mọi policy trong tương lai của OpenAI đều sẽ có kết quả giống nhau.**
 
 Một tài khoản ChatGPT có thể gặp yêu cầu xác minh, giới hạn tạm thời, hạn chế tính năng, đình chỉ hoặc vấn đề khác vì rất nhiều nguyên nhân. Tùy tình huống, nguyên nhân có thể liên quan đến bảo mật tài khoản, thanh toán, thực thi policy, hoạt động bất thường, cách sử dụng, quy định workspace, thay đổi sản phẩm hoặc các yếu tố khác. Nếu một vấn đề tài khoản xảy ra trong thời gian bạn đang cài Code ProMax, chỉ riêng việc hai sự kiện xảy ra cùng lúc không đủ để kết luận Code ProMax là nguyên nhân.
 
