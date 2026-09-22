@@ -1,5 +1,7 @@
 ﻿# Code ProMax
 
+[English](README.md) · [Tiếng Việt](README.vi.md)
+
 Code ProMax is a proprietary desktop application that connects a local Codex workflow with ChatGPT Web while keeping the Codex task, project context, tool lifecycle, and local workspace on your computer.
 
 > **Unofficial third-party software.** Code ProMax is not affiliated with, endorsed by, or sponsored by OpenAI.
@@ -140,3 +142,4 @@ Third-party components keep their original license rights and are not relicensed
 ## Trademark notice
 
 Code ProMax is an independent third-party application and is not affiliated with, endorsed by, or sponsored by OpenAI. OpenAI, ChatGPT, GPT, Codex, and related marks belong to their respective owners.
+
