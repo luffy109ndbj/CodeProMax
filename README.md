@@ -61,6 +61,20 @@ Nếu Windows SmartScreen hoặc phần mềm bảo mật chặn installer, hãy
 
 Các model khả dụng, giới hạn sử dụng, UI và capability connector phụ thuộc vào tài khoản/workspace ChatGPT mà bạn đăng nhập và có thể thay đổi khi OpenAI cập nhật sản phẩm.
 
+## Workflow khuyến nghị: Chat Long + Work
+
+Code ProMax được thiết kế để **Chat Long và Work bổ trợ cho nhau**, thay vì buộc bạn chọn một mode cho mọi loại task.
+
+- **Dùng Chat Long cho plan/build dài hạn.** Đây là lựa chọn phù hợp khi bạn muốn AI đọc project, lập kế hoạch, triển khai một chuỗi thay đổi lớn hoặc chạy nhiều task nối tiếp trong thời gian dài mà không tiêu thụ quota Work/Codex. Persistent conversation, continuation và recovery giúp Chat Long phù hợp với các phiên làm việc kéo dài.
+- **Dùng Work để review, căn chỉnh và bổ sung chi tiết.** Sau khi Chat Long hoàn thành phần lớn implementation, Work phù hợp để kiểm tra lại thay đổi, sửa các chi tiết nhỏ, chạy một task native có độ phản hồi cao hơn hoặc xử lý phần việc mà bạn muốn ưu tiên tốc độ hơn tiết kiệm quota.
+- **Có thể chuyển qua lại theo từng giai đoạn của cùng project.** Một workflow thực dụng là: Chat Long phân tích và build phần lớn công việc → Work review/chỉnh các điểm còn thiếu → quay lại Chat Long nếu cần tiếp tục một nhánh triển khai dài khác.
+
+### Harness dùng chung cho cả hai mode
+
+Chat Long và Work đều chạy qua cùng lớp **CodexChatHost Harness** của Code ProMax. Harness cung cấp vòng đời có cấu trúc cho các task lớn: AI có thể tạo **Plan**, bạn duyệt để **Build**, sau đó **Continue** qua các task tiếp theo; khi một bước có thể phục hồi, Harness cũng có đường **Retry** thay vì bắt đầu lại toàn bộ công việc.
+
+Điểm khác nhau nằm ở **route model và quota**, không phải ở việc mode nào có Harness: Chat Long dùng ChatGPT Web route còn Work dùng native Codex route, nhưng cả hai đều có cơ chế plan/build/continue/retry để giữ task có tổ chức và dễ tiếp tục.
+
 ## Tùy chọn: MCP / quyền truy cập local tools
 
 Một số workflow có thể kết nối ChatGPT với tool harness Codex cục bộ đang hoạt động thông qua MCP. Code ProMax có hướng dẫn thiết lập trực quan cho luồng này.

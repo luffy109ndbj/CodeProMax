@@ -61,6 +61,20 @@ If Windows SmartScreen or another security product blocks an installer, verify t
 
 Your available models, limits, UI, and connector capabilities depend on the ChatGPT account/workspace you sign in with and may change when OpenAI changes its products.
 
+## Recommended workflow: Chat Long + Work
+
+Code ProMax is designed so **Chat Long and Work complement each other** instead of forcing one mode to handle every kind of task.
+
+- **Use Chat Long for long-running planning and builds.** It is a strong fit when you want the AI to inspect a project, produce a plan, implement a large sequence of changes, or run multiple connected tasks over a long session without consuming Work/Codex quota. Persistent conversation, continuation, and recovery make Chat Long suitable for extended work.
+- **Use Work for review, alignment, and detail passes.** After Chat Long completes most of an implementation, Work is well suited to reviewing changes, correcting small details, running a focused native task with higher responsiveness, or handling work where speed matters more than preserving Work quota.
+- **Switch between them as the project phase changes.** A practical pattern is: let Chat Long analyze and build most of the work → use Work to review and refine the remaining details → return to Chat Long when another long implementation branch is needed.
+
+### The same Harness is available in both modes
+
+Chat Long and Work both execute through Code ProMax's **CodexChatHost Harness** machinery. Harness provides a structured lifecycle for larger tasks: the AI can produce a **Plan**, you approve it to **Build**, then **Continue** through subsequent tasks; when a recoverable step needs another attempt, Harness also has a **Retry** path instead of forcing the entire job to restart.
+
+The difference is the **model route and quota**, not whether Harness exists: Chat Long uses the ChatGPT Web route while Work uses the native Codex route, but both retain plan/build/continue/retry behavior so longer work stays organized and resumable.
+
 ## Optional: MCP / local tool access
 
 Some workflows can connect ChatGPT to the active local Codex tool harness through MCP. Code ProMax includes guided setup for this path.
