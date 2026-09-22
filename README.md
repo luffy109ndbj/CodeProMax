@@ -14,10 +14,10 @@ Code ProMax là ứng dụng desktop proprietary giúp kết nối quy trình l�
 
 ## Tính năng chính
 
-- **ChatGPT Web trong quy trình Codex** — sử dụng các model ChatGPT mà tài khoản của bạn đang có ngay trong luồng task Codex, thay vì phải quản lý một phiên model API riêng.
+- **Chat Long — làm việc dài hạn qua ChatGPT Web.** Chat Long chạy model qua ChatGPT Web bằng chính quyền truy cập của tài khoản ChatGPT đang đăng nhập, thay vì tiêu thụ quota **Work/Codex** của Native Work. Model hiển thị theo capability thật của tài khoản: với tài khoản Plus, code hiện hỗ trợ các route **GPT-5.6 Sol Instant, Medium và High**; các mức cao hơn như Extra High/Pro chỉ xuất hiện khi tài khoản thực sự được cấp quyền. Vì đi qua browser/Web route nên Chat Long có thể chậm hơn Native Work, đổi lại nó phù hợp với các task dài và giúp bảo toàn quota Work cho những lúc cần native execution nhanh hơn.
+- **Chat Long có cơ chế tiếp tục context và phục hồi kết nối.** Một thread Chat Long giữ conversation bền vững qua nhiều lượt. Khi context của backing conversation đầy, launcher có cơ chế rollover/continuation để chuyển sang Web chat mới và tiếp tục task thay vì buộc người dùng bắt đầu lại thủ công. Runtime cũng có các đường reconnect/recovery cho bridge/model khi kết nối hoặc backend bị gián đoạn. Đây là cơ chế làm việc dài hạn, **không phải cam kết context vô hạn hay một mốc token cố định**; giới hạn thực tế vẫn phụ thuộc model, tài khoản và thay đổi phía OpenAI.
+- **Native Work — nhanh hơn, dùng quota Work của tài khoản.** Work chạy task project qua backend Codex native và sử dụng quota Work của tài khoản đang đăng nhập. Danh sách model được lấy trực tiếp từ native catalog mà account được cấp quyền, nên model khả dụng có thể khác Chat Long và thay đổi theo entitlement của tài khoản. Work phù hợp khi ưu tiên tốc độ/độ phản hồi của native backend và chấp nhận sử dụng quota Work.
 - **Đăng nhập ChatGPT ngay trong app** — quá trình xác thực diễn ra trong browser profile riêng do launcher quản lý.
-- **Chat Long** — phiên làm việc dài, có nhận biết project, giữ lịch sử task và context dự án.
-- **Work** — workspace Codex tập trung vào project, phù hợp cho các tác vụ code và nhiều bước phức tạp.
 - **Quick Chat** — luồng chat nhẹ hơn cho các câu hỏi nhanh không cần quyền truy cập project.
 - **Quản lý thư mục project** — có thể chuyển project sang folder mới mà vẫn giữ alias path lịch sử và các thread cũ.
 - **Hình ảnh và context task phong phú** — ảnh và context Codex đã tổng hợp có thể đi cùng task đang hoạt động.
@@ -54,9 +54,9 @@ Nếu Windows SmartScreen hoặc phần mềm bảo mật chặn installer, hãy
 2. Mở hoặc chọn project bạn muốn làm việc.
 3. Chọn luồng phù hợp với tác vụ:
    - **Quick Chat** cho câu hỏi ngắn, không cần truy cập project.
-   - **Chat Long** cho hội thoại dài, có context project và lịch sử liên tục.
-   - **Work** cho các tác vụ code/research lớn dựa trên project đã chọn.
-4. Chọn model/mode ChatGPT Web mà tài khoản hiện tại của bạn đang có quyền sử dụng.
+   - **Chat Long** cho task dài qua ChatGPT Web, không dùng quota Work/Codex nhưng vẫn chịu giới hạn của tài khoản ChatGPT Web.
+   - **Work** cho task qua native backend, nhanh hơn trong nhiều tình huống nhưng sử dụng quota Work của tài khoản.
+4. Chọn model/mode mà surface hiện tại và tài khoản của bạn thực sự được cấp quyền sử dụng.
 5. Bắt đầu task từ Codex như bình thường. Code ProMax xử lý phần bridge browser/model và stream kết quả trở lại task Codex.
 
 Các model khả dụng, giới hạn sử dụng, UI và capability connector phụ thuộc vào tài khoản/workspace ChatGPT mà bạn đăng nhập và có thể thay đổi khi OpenAI cập nhật sản phẩm.

@@ -14,10 +14,10 @@ Code ProMax is a proprietary desktop application that connects a local Codex wor
 
 ## Main features
 
-- **ChatGPT Web inside a Codex workflow** — use the ChatGPT models available to your account from the Codex task flow instead of managing a separate API-based model session.
+- **Chat Long — long-running work through ChatGPT Web.** Chat Long runs models through ChatGPT Web using the capabilities of the signed-in ChatGPT account instead of consuming **Native Work/Codex quota**. Models are exposed according to the account's real capabilities: for Plus accounts, the current code supports **GPT-5.6 Sol Instant, Medium, and High** Web routes; higher tiers such as Extra High/Pro appear only when that account is actually entitled to them. Because Chat Long travels through the browser/Web route, it can be slower than Native Work, but it is well suited to long tasks while preserving Work quota for cases where faster native execution matters more.
+- **Chat Long can continue context and recover connections.** A Chat Long thread keeps a durable conversation across turns. When the backing conversation exhausts its context, the launcher can roll over/continue into a fresh Web chat and carry the task forward instead of forcing the user to restart manually. The runtime also contains reconnect/recovery paths for bridge/model interruptions. This is a long-running continuity mechanism, **not a promise of unlimited context or any fixed token ceiling**; effective limits still depend on the model, account, and OpenAI-side changes.
+- **Native Work — faster native path using Work quota.** Work runs project tasks through the native Codex backend and uses the signed-in account's Work quota. Its model list comes directly from the account-gated native catalog, so available models may differ from Chat Long and can change with account entitlements. Work is the better fit when native responsiveness is the priority and consuming Work quota is acceptable.
 - **Embedded ChatGPT sign-in** — authentication stays inside the launcher-owned browser profile.
-- **Chat Long** — long-running, project-aware sessions with persistent task history and project context.
-- **Work** — project-focused Codex workspace for larger coding and multi-step tasks.
 - **Quick Chat** — a lighter standalone chat path for fast questions that do not need project access.
 - **Project folder management** — projects can be moved to a new folder while preserving historical path aliases and previous threads.
 - **Images and rich task context** — images and compiled Codex context can travel with the active task.
@@ -54,9 +54,9 @@ If Windows SmartScreen or another security product blocks an installer, verify t
 2. Open or select the project you want to work on.
 3. Choose the workflow that matches the task:
    - **Quick Chat** for short questions without project access.
-   - **Chat Long** for longer project-aware conversations and persistent history.
-   - **Work** for substantial coding/research work against the selected project.
-4. Choose a ChatGPT Web model/mode that your account currently exposes.
+   - **Chat Long** for long-running tasks through ChatGPT Web without consuming Work/Codex quota, while still being subject to ChatGPT Web account limits.
+   - **Work** for tasks through the native backend; often faster, but it consumes the account's Work quota.
+4. Choose a model/mode that the current surface and your account are actually entitled to use.
 5. Start the task from Codex normally. Code ProMax handles the browser/model bridge and streams the result back into the Codex task.
 
 Your available models, limits, UI, and connector capabilities depend on the ChatGPT account/workspace you sign in with and may change when OpenAI changes its products.
