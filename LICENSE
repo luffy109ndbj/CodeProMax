@@ -1,0 +1,39 @@
+Code ProMax Proprietary Software License
+
+Copyright © 2026 Code ProMax. All rights reserved.
+
+This software and the accompanying materials (the "Software") are proprietary
+to Code ProMax. Except as expressly permitted by a separate written agreement
+or applicable law, no license or other rights are granted to copy, modify,
+publish, distribute, sublicense, sell, rent, lease, transfer, or create
+derivative works of the Software.
+
+You may install and use the Software only in accordance with the license terms
+and activation rights made available with the Software. Any unauthorized
+redistribution, resale, sublicensing, or commercial exploitation is prohibited.
+
+Nothing in this license is intended to restrict rights that cannot lawfully be
+restricted, including rights granted by applicable open-source licenses for
+third-party components distributed with the Software.
+
+THIRD-PARTY SOFTWARE
+
+The Software includes or is distributed with third-party software components
+that are licensed under their own terms, including permissive open-source
+licenses such as MIT, Apache-2.0, ISC, BSD variants, and other licenses.
+
+Those third-party components are not relicensed under this proprietary license.
+Their applicable copyright notices, license texts, attribution requirements,
+and other terms are provided in THIRD_PARTY_NOTICES.txt and the LICENSES/
+directory distributed with the Software. If this license conflicts with an
+applicable third-party license for a third-party component, the third-party
+license controls for that component.
+
+DISCLAIMER
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED
+"AS IS" AND WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR
+STATUTORY, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NON-INFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE
+LAW, CODE PROMAX SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+CONSEQUENTIAL, OR EXEMPLARY DAMAGES ARISING FROM OR RELATED TO THE SOFTWARE.
