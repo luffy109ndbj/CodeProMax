@@ -77,7 +77,14 @@ Chat Long và Work đều chạy qua cùng lớp **CodexChatHost Harness** của
 
 ## Tùy chọn: MCP / quyền truy cập local tools
 
-Một số workflow có thể kết nối ChatGPT với tool harness Codex cục bộ đang hoạt động thông qua MCP. Code ProMax có hướng dẫn thiết lập trực quan cho luồng này.
+Chat Long và Work đều có thể sử dụng **MCP/local tools**. Work giữ cấu hình MCP người dùng trong profile native của tài khoản; Chat Long đồng bộ các user MCP server vào profile Web/bridge riêng trong khi vẫn giữ các worker do Code ProMax quản lý. Vì vậy MCP không chỉ dành riêng cho Work: cả hai mode đều có thể dùng các MCP server phù hợp với project và quyền bạn cấu hình.
+
+## Tính năng nâng cao
+
+- **Nhiều tài khoản và chuyển account nhanh.** Bạn có thể thêm nhiều account, mỗi account có browser partition và `CODEX_HOME` cô lập riêng, sau đó chuyển account ngay trong launcher. Điều này giúp tách session ChatGPT/Work theo từng tài khoản thay vì ghi đè profile của nhau.
+- **AI Models / custom provider.** Code ProMax có lớp provider generic hỗ trợ ba protocol hiện tại: `openai-responses`, `openai-chat` và `anthropic-messages`. Bạn có thể cấu hình provider/model bên ngoài khi endpoint tương thích một trong các protocol này. Ví dụ, **9router có thể được dùng nếu endpoint bạn cấu hình tương thích protocol mà Code ProMax hỗ trợ**; đây không phải integration 9router built-in riêng.
+- **Agent Customization với `AGENTS.md` và Skills.** Có thể quản lý chỉ dẫn `AGENTS.md` ở phạm vi global hoặc project, tạo/import skill package và dùng lại các workflow theo nhu cầu. Project resources được lưu theo convention `AGENTS.md` và `.agents/skills`, còn global resources được đồng bộ vào các profile cô lập của Code ProMax để Chat Long, Work và Harness cùng sử dụng.
+- **MCP cho cả Chat Long và Work.** User MCP servers có thể tồn tại trong Work profile và được đồng bộ sang Chat Long. Code ProMax vẫn giữ phần MCP managed của chính app trong quá trình sync, nên bạn có thể dùng cùng các MCP/tool project ở cả hai surface thay vì chỉ Work.
 
 <p align="center">
   <img src="media/mcp-create-tunnel.gif" alt="Tạo Secure MCP Tunnel" width="900">

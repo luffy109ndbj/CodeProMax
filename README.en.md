@@ -77,7 +77,14 @@ The difference is the **model route and quota**, not whether Harness exists: Cha
 
 ## Optional: MCP / local tool access
 
-Some workflows can connect ChatGPT to the active local Codex tool harness through MCP. Code ProMax includes guided setup for this path.
+Both Chat Long and Work can use **MCP/local tools**. Work keeps user MCP configuration in the account's native profile; Chat Long synchronizes user MCP servers into its separate Web/bridge profile while preserving Code ProMax-managed workers. MCP is therefore not limited to Work: both modes can use project MCP servers according to the configuration and permissions you provide.
+
+## Advanced features
+
+- **Multiple accounts with fast switching.** You can add multiple accounts; each managed account has its own isolated browser partition and `CODEX_HOME`, then switch accounts directly from the launcher. This keeps ChatGPT/Work sessions separated instead of overwriting another account's profile.
+- **AI Models / custom providers.** Code ProMax has a generic provider layer supporting three current protocols: `openai-responses`, `openai-chat`, and `anthropic-messages`. External providers/models can be configured when their endpoint is compatible with one of those protocols. For example, **9router can be used if the endpoint you configure is compatible with a protocol supported by Code ProMax**; there is no dedicated built-in 9router integration.
+- **Agent Customization with `AGENTS.md` and Skills.** You can manage persistent `AGENTS.md` instructions at global or project scope, create/import skill packages, and reuse workflows on demand. Project resources use the standard `AGENTS.md` and `.agents/skills` locations, while global resources are synchronized into Code ProMax's isolated profiles so Chat Long, Work, and Harness can share them.
+- **MCP for both Chat Long and Work.** User MCP servers can live in Work profiles and are synchronized into Chat Long. Code ProMax preserves its own managed MCP workers during synchronization, so the same project MCP/tool setup can be available from both surfaces rather than only from Work.
 
 <p align="center">
   <img src="media/mcp-create-tunnel.gif" alt="Create a Secure MCP Tunnel" width="900">
