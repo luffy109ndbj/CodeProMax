@@ -1,145 +1,144 @@
 ﻿# Code ProMax
 
-[English](README.md) · [Tiếng Việt](README.vi.md)
+[Tiếng Việt](README.md) · [English](README.en.md)
 
-Code ProMax is a proprietary desktop application that connects a local Codex workflow with ChatGPT Web while keeping the Codex task, project context, tool lifecycle, and local workspace on your computer.
+Code ProMax là ứng dụng desktop proprietary giúp kết nối quy trình làm việc Codex cục bộ với ChatGPT Web, đồng thời vẫn giữ task Codex, context dự án, vòng đời tool và workspace cục bộ trên máy của bạn.
 
-> **Unofficial third-party software.** Code ProMax is not affiliated with, endorsed by, or sponsored by OpenAI.
+> **Phần mềm bên thứ ba không chính thức.** Code ProMax không liên kết, không được chứng thực và không được tài trợ bởi OpenAI.
 
 ## Demo
 
 <p align="center">
-  <img src="media/demo.gif" alt="Code ProMax demo" width="960">
+  <img src="media/demo.gif" alt="Demo Code ProMax" width="960">
 </p>
 
-## Main features
+## Tính năng chính
 
-- **ChatGPT Web inside a Codex workflow** — use the ChatGPT models available to your account from the Codex task flow instead of managing a separate API-based model session.
-- **Embedded ChatGPT sign-in** — authentication stays inside the launcher-owned browser profile.
-- **Chat Long** — long-running, project-aware sessions with persistent task history and project context.
-- **Work** — project-focused Codex workspace for larger coding and multi-step tasks.
-- **Quick Chat** — a lighter standalone chat path for fast questions that do not need project access.
-- **Project folder management** — projects can be moved to a new folder while preserving historical path aliases and previous threads.
-- **Images and rich task context** — images and compiled Codex context can travel with the active task.
-- **MCP / local tools** — supported configurations can connect ChatGPT back to the active local Codex tool harness.
-- **Secure MCP Tunnel support** — Code ProMax can use OpenAI's Secure MCP Tunnel flow for private/local MCP connectivity where the account/workspace supports it.
-- **Local diagnostics** — runtime health checks, logs, smoke tests, cancellation controls, and explicit errors when a required capability is unavailable.
-- **Multiple model tiers** — the launcher exposes the ChatGPT model/mode choices actually available to the signed-in account.
+- **ChatGPT Web trong quy trình Codex** — sử dụng các model ChatGPT mà tài khoản của bạn đang có ngay trong luồng task Codex, thay vì phải quản lý một phiên model API riêng.
+- **Đăng nhập ChatGPT ngay trong app** — quá trình xác thực diễn ra trong browser profile riêng do launcher quản lý.
+- **Chat Long** — phiên làm việc dài, có nhận biết project, giữ lịch sử task và context dự án.
+- **Work** — workspace Codex tập trung vào project, phù hợp cho các tác vụ code và nhiều bước phức tạp.
+- **Quick Chat** — luồng chat nhẹ hơn cho các câu hỏi nhanh không cần quyền truy cập project.
+- **Quản lý thư mục project** — có thể chuyển project sang folder mới mà vẫn giữ alias path lịch sử và các thread cũ.
+- **Hình ảnh và context task phong phú** — ảnh và context Codex đã tổng hợp có thể đi cùng task đang hoạt động.
+- **MCP / local tools** — trong cấu hình hỗ trợ, ChatGPT có thể kết nối ngược về tool harness Codex cục bộ của task hiện tại.
+- **Hỗ trợ Secure MCP Tunnel** — Code ProMax có thể sử dụng luồng Secure MCP Tunnel của OpenAI để kết nối MCP private/local khi account hoặc workspace hỗ trợ.
+- **Chẩn đoán cục bộ** — có kiểm tra runtime health, log, smoke test, điều khiển hủy task và lỗi rõ ràng khi thiếu capability cần thiết.
+- **Nhiều cấp model** — launcher hiển thị các model/mode ChatGPT mà tài khoản đang đăng nhập thực sự có quyền sử dụng.
 
-The MCP tunnel portion uses OpenAI's documented Secure MCP Tunnel model, where the customer-run tunnel client keeps an outbound connection and the private MCP server does not need a public inbound port. See the official OpenAI `tunnel-client` documentation for the current platform requirements and availability.
+Phần MCP tunnel sử dụng mô hình Secure MCP Tunnel được OpenAI công bố tài liệu, trong đó tunnel client do người dùng vận hành duy trì kết nối outbound và MCP server private không cần mở public inbound port. Hãy tham khảo tài liệu chính thức của OpenAI `tunnel-client` để xem yêu cầu nền tảng và tình trạng hỗ trợ mới nhất.
 
-## Installation
+## Cài đặt
 
 ### Windows
 
-1. When a production-signed build is available, open this repository's **Releases** page.
-2. Download the latest production-signed Windows installer named similar to:
+1. Khi có bản build production-signed, mở mục **Releases** của repository này.
+2. Tải installer Windows production-signed mới nhất, tên file sẽ tương tự:
 
    ```text
    code-promax-<version>-win-x64.exe
    ```
 
-3. Run the installer.
-4. Start **Code ProMax**.
-5. Sign in to ChatGPT inside the embedded browser using your own account.
-6. Run the browser/runtime verification shown by the app.
-7. Install/enable the Codex integration when prompted.
-8. Restart Codex if the app asks you to, then select the ChatGPT Web model exposed by Code ProMax.
+3. Chạy installer.
+4. Mở **Code ProMax**.
+5. Đăng nhập ChatGPT trong browser tích hợp bằng chính tài khoản của bạn.
+6. Chạy bước kiểm tra browser/runtime do app cung cấp.
+7. Cài đặt hoặc bật tích hợp Codex khi app yêu cầu.
+8. Nếu app yêu cầu, khởi động lại Codex rồi chọn model ChatGPT Web được Code ProMax cung cấp.
 
-If Windows SmartScreen or another security product blocks an installer, verify that you downloaded it from this repository's official Releases page and check the published file/signature before continuing. Do not download builds from mirrors you do not trust.
+Nếu Windows SmartScreen hoặc phần mềm bảo mật chặn installer, hãy xác minh rằng file được tải từ trang Releases chính thức của repository này và kiểm tra chữ ký/file đã công bố trước khi tiếp tục. Không nên tải build từ nguồn mirror mà bạn không tin tưởng.
 
-## Basic usage
+## Cách sử dụng cơ bản
 
-1. Open Code ProMax and confirm your ChatGPT session is signed in.
-2. Open or select the project you want to work on.
-3. Choose the workflow that matches the task:
-   - **Quick Chat** for short questions without project access.
-   - **Chat Long** for longer project-aware conversations and persistent history.
-   - **Work** for substantial coding/research work against the selected project.
-4. Choose a ChatGPT Web model/mode that your account currently exposes.
-5. Start the task from Codex normally. Code ProMax handles the browser/model bridge and streams the result back into the Codex task.
+1. Mở Code ProMax và xác nhận phiên ChatGPT của bạn đang đăng nhập.
+2. Mở hoặc chọn project bạn muốn làm việc.
+3. Chọn luồng phù hợp với tác vụ:
+   - **Quick Chat** cho câu hỏi ngắn, không cần truy cập project.
+   - **Chat Long** cho hội thoại dài, có context project và lịch sử liên tục.
+   - **Work** cho các tác vụ code/research lớn dựa trên project đã chọn.
+4. Chọn model/mode ChatGPT Web mà tài khoản hiện tại của bạn đang có quyền sử dụng.
+5. Bắt đầu task từ Codex như bình thường. Code ProMax xử lý phần bridge browser/model và stream kết quả trở lại task Codex.
 
-Your available models, limits, UI, and connector capabilities depend on the ChatGPT account/workspace you sign in with and may change when OpenAI changes its products.
+Các model khả dụng, giới hạn sử dụng, UI và capability connector phụ thuộc vào tài khoản/workspace ChatGPT mà bạn đăng nhập và có thể thay đổi khi OpenAI cập nhật sản phẩm.
 
-## Optional: MCP / local tool access
+## Tùy chọn: MCP / quyền truy cập local tools
 
-Some workflows can connect ChatGPT to the active local Codex tool harness through MCP. Code ProMax includes guided setup for this path.
+Một số workflow có thể kết nối ChatGPT với tool harness Codex cục bộ đang hoạt động thông qua MCP. Code ProMax có hướng dẫn thiết lập trực quan cho luồng này.
 
 <p align="center">
-  <img src="media/mcp-create-tunnel.gif" alt="Create a Secure MCP Tunnel" width="900">
+  <img src="media/mcp-create-tunnel.gif" alt="Tạo Secure MCP Tunnel" width="900">
 </p>
 
 <p align="center">
-  <img src="media/mcp-connect-connector.gif" alt="Connect the MCP connector" width="900">
+  <img src="media/mcp-connect-connector.gif" alt="Kết nối MCP connector" width="900">
 </p>
 
-OpenAI documents Developer Mode / MCP apps and its Secure MCP Tunnel client separately. Those platform features, account eligibility, permissions, and UI can change independently of Code ProMax.
+OpenAI có tài liệu riêng cho Developer Mode / MCP apps và Secure MCP Tunnel client. Các tính năng nền tảng này, quyền account, policy workspace và UI có thể thay đổi độc lập với Code ProMax.
 
-Useful official references:
+Tài liệu chính thức hữu ích:
 
 - OpenAI Secure MCP Tunnel client: https://github.com/openai/tunnel-client
-- ChatGPT Developer Mode and MCP apps: https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt
+- ChatGPT Developer Mode và MCP apps: https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt
 
-## Account risk and responsibility
+## Rủi ro tài khoản và trách nhiệm sử dụng
 
-Code ProMax interacts with ChatGPT through your own account. There is **no guarantee that using any third-party automation or integration is risk-free for an account**.
+Code ProMax tương tác với ChatGPT bằng chính tài khoản của bạn. **Không có bảo đảm rằng việc sử dụng bất kỳ automation hoặc integration bên thứ ba nào cũng hoàn toàn không có rủi ro đối với tài khoản.**
 
-The developer's own experience is that Code ProMax has been used for months, on multiple computers, with ChatGPT Plus accounts without those accounts being disabled as a result of that testing. **That is only an anecdotal experience, not a guarantee that the same outcome will apply to every user, account, usage pattern, region, workspace, or future OpenAI policy.**
+Theo trải nghiệm thực tế của developer, Code ProMax đã được sử dụng trong nhiều tháng, trên nhiều máy tính và với các tài khoản ChatGPT Plus mà không ghi nhận việc các tài khoản thử nghiệm đó bị vô hiệu hóa do quá trình sử dụng này. **Đây chỉ là kinh nghiệm thực tế của developer, không phải cam kết rằng mọi người dùng, mọi tài khoản, mọi cách sử dụng, mọi khu vực, mọi workspace hoặc mọi policy trong tương lai của OpenAI đều sẽ có kết quả giống nhau.**
 
-A ChatGPT account can encounter restrictions, verification requests, temporary limitations, suspension, or other problems for many different reasons. Depending on the situation, those reasons may relate to account security, billing, policy enforcement, unusual activity, usage patterns, workspace rules, product changes, or other factors. If an account issue happens while Code ProMax is installed, that timing alone does not prove that Code ProMax caused it.
+Một tài khoản ChatGPT có thể gặp yêu cầu xác minh, giới hạn tạm thời, hạn chế tính năng, đình chỉ hoặc vấn đề khác vì rất nhiều nguyên nhân. Tùy tình huống, nguyên nhân có thể liên quan đến bảo mật tài khoản, thanh toán, thực thi policy, hoạt động bất thường, cách sử dụng, quy định workspace, thay đổi sản phẩm hoặc các yếu tố khác. Nếu một vấn đề tài khoản xảy ra trong thời gian bạn đang cài Code ProMax, chỉ riêng việc hai sự kiện xảy ra cùng lúc không đủ để kết luận Code ProMax là nguyên nhân.
 
-Parts of Code ProMax integrate with capabilities documented by OpenAI, including MCP-related functionality and Secure MCP Tunnel where available. However, the ChatGPT Web bridge itself is an **unofficial third-party integration** and is not an OpenAI-supported guarantee of account safety or continued compatibility.
+Một số phần của Code ProMax tích hợp với các capability có tài liệu chính thức từ OpenAI, bao gồm các chức năng liên quan đến MCP và Secure MCP Tunnel khi khả dụng. Tuy nhiên, phần bridge với ChatGPT Web vẫn là **integration bên thứ ba không chính thức** và không phải là cam kết từ OpenAI về độ an toàn tài khoản hoặc khả năng tương thích lâu dài.
 
-By using Code ProMax, you are responsible for:
+Khi sử dụng Code ProMax, bạn có trách nhiệm:
 
-- complying with the OpenAI terms, policies, and workspace rules that apply to your account;
-- choosing how aggressively and how frequently you automate tasks;
-- reviewing tool permissions before allowing local write/modify actions;
-- protecting your own ChatGPT account and credentials;
-- keeping backups of important project files before allowing automated code changes; and
-- deciding whether the operational/account risk is acceptable for your use case.
+- tuân thủ điều khoản, policy và quy định workspace của OpenAI áp dụng cho tài khoản của mình;
+- tự quyết định mức độ và tần suất automation phù hợp;
+- kiểm tra quyền tool trước khi cho phép hành động ghi hoặc sửa file cục bộ;
+- bảo vệ tài khoản và thông tin đăng nhập ChatGPT của mình;
+- sao lưu các file project quan trọng trước khi cho phép tác vụ tự động sửa code; và
+- tự đánh giá mức rủi ro vận hành/tài khoản có phù hợp với nhu cầu của mình hay không.
 
-**Code ProMax and its developer are not responsible for suspension, restriction, loss of access, rate limits, account review, billing issues, or other ChatGPT account problems where the cause may depend on OpenAI systems, user behavior, account state, policy enforcement, or other circumstances outside the application's control.** Nothing in this notice overrides rights or liabilities that cannot legally be excluded.
+**Code ProMax và developer không chịu trách nhiệm cho việc tài khoản bị đình chỉ, hạn chế, mất quyền truy cập, rate limit, bị review, gặp vấn đề thanh toán hoặc các vấn đề tài khoản ChatGPT khác khi nguyên nhân có thể phụ thuộc vào hệ thống OpenAI, hành vi người dùng, trạng thái tài khoản, việc thực thi policy hoặc các yếu tố nằm ngoài khả năng kiểm soát của ứng dụng.** Nội dung này không loại trừ các quyền hoặc trách nhiệm pháp lý mà luật áp dụng không cho phép loại trừ.
 
-## Privacy and security notes
+## Ghi chú về quyền riêng tư và bảo mật
 
-- ChatGPT prompts are still processed by OpenAI; Code ProMax is not local AI inference.
-- Do not treat Temporary Chat or an embedded browser session as anonymity.
-- Keep your operating system and Code ProMax installation updated.
-- Install only builds from the official repository/release source you trust.
-- Review MCP/tool permissions carefully before enabling write or modify actions.
-- The application should never require you to publish private project source code to this GitHub repository in order to use the desktop app.
+- Prompt gửi tới ChatGPT vẫn được OpenAI xử lý; Code ProMax không phải là hệ thống AI chạy hoàn toàn local.
+- Không nên xem Temporary Chat hoặc browser session tích hợp như một hình thức ẩn danh.
+- Giữ hệ điều hành và Code ProMax ở phiên bản mới phù hợp.
+- Chỉ cài build từ repository/release chính thức mà bạn tin tưởng.
+- Kiểm tra kỹ quyền MCP/tool trước khi bật các hành động ghi hoặc chỉnh sửa.
+- Ứng dụng không yêu cầu bạn public source project riêng của mình lên repository GitHub này để có thể sử dụng app desktop.
 
-## Troubleshooting
+## Xử lý sự cố
 
-If setup fails:
+Nếu thiết lập không hoạt động:
 
-1. Confirm ChatGPT opens and is signed in inside Code ProMax.
-2. Run the app's runtime/browser verification or doctor check.
-3. Restart Code ProMax and Codex after changing integration settings.
-4. If using MCP, verify that the tunnel/connector is available to the same OpenAI/ChatGPT environment you configured.
-5. Check local logs for an explicit capability, permission, browser-UI, or network error before retrying repeatedly.
+1. Xác nhận ChatGPT mở được và đã đăng nhập bên trong Code ProMax.
+2. Chạy kiểm tra runtime/browser hoặc doctor check trong app.
+3. Khởi động lại Code ProMax và Codex sau khi thay đổi cấu hình integration.
+4. Nếu dùng MCP, xác nhận tunnel/connector khả dụng trong cùng môi trường OpenAI/ChatGPT mà bạn đã cấu hình.
+5. Kiểm tra log cục bộ để tìm lỗi rõ ràng về capability, permission, browser UI hoặc network trước khi thử lại liên tục.
 
-Because ChatGPT's web UI and platform capabilities can change, a future OpenAI update can temporarily break browser automation or connector behavior even when Code ProMax itself has not changed.
+Do UI web và capability nền tảng của ChatGPT có thể thay đổi, một bản cập nhật trong tương lai từ OpenAI có thể tạm thời làm browser automation hoặc connector không hoạt động ngay cả khi bản thân Code ProMax không thay đổi.
 
-## Releases and updates
+## Phát hành và cập nhật
 
-Production-signed binaries are distributed through this repository's **Releases** section when a release is published. The source code for Code ProMax is not published here.
+Các binary production-signed được phân phối qua mục **Releases** của repository này khi có bản phát hành. Source code của Code ProMax không được public tại đây.
 
-Before installing an update, prefer the production-signed installer and any checksum/signature information supplied with that release.
+Trước khi cài bản cập nhật, nên ưu tiên installer đã được production-sign và thông tin checksum/chữ ký được cung cấp cùng release nếu có.
 
-## License
+## Giấy phép
 
-Code ProMax itself is proprietary software. See [LICENSE](LICENSE).
+Code ProMax là phần mềm proprietary. Xem [LICENSE](LICENSE).
 
-The application includes third-party open-source components distributed under their own licenses. Their notices and attribution are provided in:
+Ứng dụng có sử dụng các thành phần open-source bên thứ ba theo giấy phép riêng của từng dự án. Thông tin notice và attribution được cung cấp tại:
 
 - [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt)
 - [Bun.md](Bun.md)
 
-Third-party components keep their original license rights and are not relicensed under the Code ProMax proprietary license.
+Các thành phần bên thứ ba vẫn giữ nguyên quyền theo giấy phép gốc của chúng và không bị đổi sang giấy phép proprietary của Code ProMax.
 
-## Trademark notice
+## Thông báo thương hiệu
 
-Code ProMax is an independent third-party application and is not affiliated with, endorsed by, or sponsored by OpenAI. OpenAI, ChatGPT, GPT, Codex, and related marks belong to their respective owners.
-
+Code ProMax là ứng dụng bên thứ ba độc lập, không liên kết, không được chứng thực và không được tài trợ bởi OpenAI. OpenAI, ChatGPT, GPT, Codex và các nhãn hiệu liên quan thuộc về chủ sở hữu tương ứng.
